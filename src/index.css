@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box;
+/*   outline: 1px solid red !important; */
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h2 {
+  margin: 0 20px 10px;
+}
+
+h4 {
+  margin: 0;
+  flex: 1;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 15px;
+  color: #495057;
+}
+
+.row {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.branding {
+  width: 100%;
+  padding: 0px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.branding > img {
+  max-width: 80px;
+  height: auto;
+}
+
+.content {
+  width: 100%;
+}
+
+.filtered-search {
+  margin-top: 5px;
+  position: relative;
+}
+
+.filtered-search > .input-container {
+  border: 1px solid #adb5bd;
+  border-radius: 12px;
+  align-items: center;
+  display: flex;
+  padding: 10px 10px;
+}
+
+.filtered-search > .input-container > input {
+  flex: 1;
+  border: none;
+  color: #495057;
+  outline: none;
+  font-size: 100%;
+}
+
+.filtered-search > .input-container > input::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+.filtered-search > .input-container > i {
+  color: #adb5bd;
+}
+
+.filters-container {
+  font-size: 0.8em;
+  padding: 20px 0;
+  background-color: #f8f9fa;
+  min-height: 200px;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px #ced4da;
+}
+
+.filters-container i {
+  font-size: 1.5em;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter {
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.sort-filter, .only-country-filter {
+  display: flex;
+  align-items: center;
+}
+
+.sort-filter .filter-header,
+.only-country-filter .filter-header {
+  margin-bottom: 0;
+}
+
+.sort-filter select {
+  margin-left: 15px;
+  height: 2em;
+}
+
+.only-country-filter .switch {
+  margin-left: 15px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.category {
+  padding: 8px 10px;
+}
+
+.results {
+  margin: 3rem 0;
+}
+
+@media only screen and (min-width: 576px) {
+  .filter {
+    width: 50%;
+  }
+  .categories-filter {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    padding: 50px 15px;
+  }
+  .branding {
+    width: 25%;
+    padding: 0 20px;
+    text-align: left;
+  }
+  .content {
+    width: 50%;
+  }
+}
+
+/*
+ ** Slider **
+ *
+ * Reference:
+ * - https://www.w3schools.com/howto/howto_js_rangeslider.asp
+ *
+ */
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #57d26a;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #57d26a;
+  cursor: pointer;
+}
+
+/*
+ ** Toggle Switch **
+ *
+ * Reference:
+ * - https://www.w3schools.com/howto/howto_css_switch.asp
+ *
+ */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  min-width: 46px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.switch .slider-switch {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch .slider-switch:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch input:checked + .slider-switch {
+  background-color: #57d26a;
+}
+
+.switch input:focus + .slider-switch {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.switch input:checked + .slider-switch:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.switch .slider-switch.round {
+  border-radius: 20px;
+}
+
+.switch .slider-switch.round:before {
+  border-radius: 50%;
+}
+
+/*
+ ** Checkbox **
+ *
+ * Reference:
+ * - https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+ *
+ */
+
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0px;
+  padding-top: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid #57d26a;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #57d26a;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
